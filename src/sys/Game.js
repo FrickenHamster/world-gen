@@ -29,7 +29,8 @@ BasicGame.Game.prototype = {
 	create: function () {
 
 		//	Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
-
+        new GenMain(this.game);
+        console.log("wtf");
 	},
 
 	update: function () {
