@@ -18,8 +18,8 @@ class GenMain
 	
 	gen:WorldGen;
 	
-	mapWidth:number = 500;
-	mapHeight:number = 300;
+	mapWidth:number = 800;
+	mapHeight:number = 600;
 	
 	constructor(game:Phaser.Game)
 	{
@@ -29,7 +29,7 @@ class GenMain
 		this.testBitmapData = game.make.bitmapData(this.mapWidth, this.mapHeight);
 		this.tempBitmapData = game.make.bitmapData(this.mapWidth, this.mapHeight);
 		
-		this.gen = new WorldGen(this.mapWidth, this.mapHeight, 19930812);
+		this.gen = new WorldGen(this.mapWidth, this.mapHeight, 121548);//19930812);
 		
 		var vals:number[] = this.gen.heightMap;
 		var temp:number[] = this.gen.tempMap;
@@ -40,8 +40,8 @@ class GenMain
 			for (var j:number = 0; j < this.mapWidth; j++)
 			{
 				/*var nn:number = vals[i * this.mapWidth + j] * 255 / 1000;
-				this.testBitmapData.setPixel32(j, i, nn, nn, nn, 255, false);*/
-				
+				this.testBitmapData.setPixel32(j, i, nn, nn, nn, 255, false);
+				*/
 				var ter:Terrain = terrain[i * this.mapWidth + j];
 				switch (ter)
 				{

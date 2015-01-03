@@ -114,9 +114,9 @@ var WorldGen = (function () {
             y -= this.height;
         map[x + y * this.width] = value;
     };
-    WorldGen.SEED_INTERVAL = 16;
-    WorldGen.ROUGHNESS = 400;
-    WorldGen.ROUGH_CONST = .6;
+    WorldGen.SEED_INTERVAL = 32;
+    WorldGen.ROUGHNESS = 600;
+    WorldGen.ROUGH_CONST = .7;
     WorldGen.MAX_HEIGHT = 1000;
     WorldGen.MAX_TEMP = 60;
     return WorldGen;

@@ -17,9 +17,9 @@ class WorldGen
 
 	rand:HamRand;
 
-	static SEED_INTERVAL:number = 16;
-	static ROUGHNESS:number = 400;
-	static ROUGH_CONST:number = .6;
+	static SEED_INTERVAL:number = 32;
+	static ROUGHNESS:number = 600;
+	static ROUGH_CONST:number = .7;
 	static MAX_HEIGHT:number = 1000;
 	
 	static MAX_TEMP:number = 60;

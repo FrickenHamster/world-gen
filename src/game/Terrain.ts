@@ -16,9 +16,9 @@ enum Terrain
 
 class TerrainZ
 {
-	static DEEP_WATER:number = 300;
-	static WATER:number = 500;
-	static SAND:number = 700;
+	static DEEP_WATER:number = 400;
+	static WATER:number = 600;
+	static SAND:number = 750;
 	static GRASS:number = 800;
 }
 

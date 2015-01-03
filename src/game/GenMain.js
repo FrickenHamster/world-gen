@@ -7,19 +7,20 @@
 /// <reference path="Terrain.ts" />
 var GenMain = (function () {
     function GenMain(game) {
-        this.mapWidth = 500;
-        this.mapHeight = 300;
+        this.mapWidth = 800;
+        this.mapHeight = 600;
         this.game = game;
         this.testBitmapData = game.make.bitmapData(this.mapWidth, this.mapHeight);
         this.tempBitmapData = game.make.bitmapData(this.mapWidth, this.mapHeight);
-        this.gen = new WorldGen(this.mapWidth, this.mapHeight, 19930812);
+        this.gen = new WorldGen(this.mapWidth, this.mapHeight, 121548); //19930812);
         var vals = this.gen.heightMap;
         var temp = this.gen.tempMap;
         var terrain = this.gen.terrainMap;
         for (var i = 0; i < this.mapHeight; i++) {
             for (var j = 0; j < this.mapWidth; j++) {
                 /*var nn:number = vals[i * this.mapWidth + j] * 255 / 1000;
-                this.testBitmapData.setPixel32(j, i, nn, nn, nn, 255, false);*/
+                this.testBitmapData.setPixel32(j, i, nn, nn, nn, 255, false);
+                */
                 var ter = terrain[i * this.mapWidth + j];
                 switch (ter) {
                     case 0 /* DEEP_WATER */:
