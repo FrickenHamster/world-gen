@@ -81,6 +81,7 @@ class GenMain
 		//this.tempBitmapData.addToWorld();
 		
 		
+		
 	}
 	
 	
