@@ -10,7 +10,8 @@ enum Terrain
 	GRASS,
 	SAND,
 	ICE,
-	SNOW
+	SNOW,
+	ORE
 }
 
 
