@@ -63,6 +63,8 @@ class GenMain
 					case Terrain.SNOW:
 						this.testBitmapData.setPixel32(j, i, 240, 240, 240, 255, false);
 						break;
+					case Terrain.ORE:
+						this.testBitmapData.setPixel32(j, i, 50,50,50,255,false);
 					
 				}
 				

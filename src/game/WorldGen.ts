@@ -47,7 +47,11 @@ class WorldGen
 				var hh = this.heightMap[i * this.width + j];
 				var temp = this.tempMap[i * this.width + j];
 				
-				
+				if (hh > 925 && hh < 930)
+				{
+					this.terrainMap[i * this.width + j] = Terrain.ORE;
+				}
+				else
 				if (temp < 20)
 				{
 					if (hh < TerrainZ.WATER)

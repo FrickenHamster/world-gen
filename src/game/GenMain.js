@@ -1,6 +1,6 @@
 /**
- * Created by Hamster on 12/27/2014.
- */
+* Created by Hamster on 12/27/2014.
+*/
 /// <reference path="../libs/phaser.d.ts" />
 /// <reference path="HamRand.ts" />
 /// <reference path="WorldGen.ts" />
@@ -10,12 +10,16 @@ var GenMain = (function () {
         this.mapWidth = 800;
         this.mapHeight = 600;
         this.game = game;
+
         this.testBitmapData = game.make.bitmapData(this.mapWidth, this.mapHeight);
         this.tempBitmapData = game.make.bitmapData(this.mapWidth, this.mapHeight);
+
         this.gen = new WorldGen(this.mapWidth, this.mapHeight, 121548); //19930812);
+
         var vals = this.gen.heightMap;
         var temp = this.gen.tempMap;
         var terrain = this.gen.terrainMap;
+
         for (var i = 0; i < this.mapHeight; i++) {
             for (var j = 0; j < this.mapWidth; j++) {
                 /*var nn:number = vals[i * this.mapWidth + j] * 255 / 1000;
@@ -41,11 +45,15 @@ var GenMain = (function () {
                     case 5 /* SNOW */:
                         this.testBitmapData.setPixel32(j, i, 240, 240, 240, 255, false);
                         break;
+                    case 6 /* ORE */:
+                        this.testBitmapData.setPixel32(j, i, 50, 50, 50, 255, false);
                 }
+
                 var tt = temp[i * this.mapWidth + j] * 255 / WorldGen.MAX_TEMP;
                 this.tempBitmapData.setPixel32(j, i, tt, 0, 255 - tt, 100, false);
             }
         }
+
         //this.testBitmapData.setPixel(0, 0, 0, 0, 0, true);
         this.testBitmapData.context.putImageData(this.testBitmapData.imageData, 0, 0);
         this.tempBitmapData.context.putImageData(this.tempBitmapData.imageData, 0, 0);
