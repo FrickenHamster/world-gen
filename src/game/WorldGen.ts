@@ -12,6 +12,7 @@ class WorldGen
 
 	heightMap:number[];
 	tempMap:number[];
+	oreMap:number[];
 	
 	terrainMap:Terrain[];
 
@@ -32,6 +33,7 @@ class WorldGen
 		this.heightMap = [width * height];
 		this.tempMap = [width * height];
 		this.terrainMap = [width * height];
+		this.oreMap = [width * height];
 
 		this.rand = new HamRand(seed);
 
@@ -39,6 +41,9 @@ class WorldGen
 		this.seedValues();
 		this.diamondSquare(this.heightMap, this.width, this.height, WorldGen.SEED_INTERVAL, WorldGen.ROUGHNESS, WorldGen.ROUGH_CONST);
 
+		//generate ores
+		this.seedOre(8);
+		this.diamondSquare(this.oreMap, this.width, this.height, 8, 40, .5);
 
 		for (var i:number = 0; i < this.height; i++)
 		{
@@ -47,11 +52,11 @@ class WorldGen
 				var hh = this.heightMap[i * this.width + j];
 				var temp = this.tempMap[i * this.width + j];
 				
-				if (hh > 925 && hh < 930)
+				/*if (hh > 925 && hh < 930)
 				{
 					this.terrainMap[i * this.width + j] = Terrain.ORE;
 				}
-				else
+				else*/
 				if (temp < 20)
 				{
 					if (hh < TerrainZ.WATER)
@@ -79,12 +84,19 @@ class WorldGen
 				}
 				else
 				{
+					var oo:number = this.oreMap[i * this.width + j];
+					if (oo > 40)
+					{
+						this.terrainMap[i * this.width + j] = Terrain.ORE;	
+					}
+					else
 					this.terrainMap[i * this.width + j] = Terrain.GRASS;
 				}
 				
 			}
 		}
-
+		
+		
 	}
 
 	public seedValues()
@@ -107,6 +119,24 @@ class WorldGen
 			}
 		}
 
+	}
+	
+	public seedOre(interval:number)
+	{
+		for (var i:number = 0; i < this.height; i++)
+		{
+			for (var j:number = 0; j < this.width; j++)
+			{
+				this.oreMap[i * this.width + j] = -1;
+			}
+		}
+		for (var i:number = 0; i < this.height; i += interval)
+		{
+			for (var j:number = 0; j < this.width; j += interval)
+			{
+				this.oreMap[i * this.width + j] = this.rand.random() * 50;
+			}
+		}
 	}
 
 
