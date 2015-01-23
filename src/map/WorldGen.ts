@@ -77,6 +77,7 @@ class WorldGen
 					this.terrainMap[i * this.width + j] = Terrain.WATER;
 				}
 				
+				
 				else if (hh < TerrainZ.SAND)
 				{
 					this.terrainMap[i * this.width + j] = Terrain.SAND;
