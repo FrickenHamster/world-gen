@@ -2,9 +2,9 @@
 * Created by Hamster on 12/27/2014.
 */
 /// <reference path="../libs/phaser.d.ts" />
-/// <reference path="HamRand.ts" />
-/// <reference path="WorldGen.ts" />
-/// <reference path="Terrain.ts" />
+/// <reference path="../map/HamRand.ts" />
+/// <reference path="../map/WorldGen.ts" />
+/// <reference path="../map/Terrain.ts" />
 var GenMain = (function () {
     function GenMain(game) {
         this.mapWidth = 800;

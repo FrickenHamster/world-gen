@@ -3,6 +3,7 @@
 */
 /// <reference path="HamRand.ts" />
 /// <reference path="Terrain.ts" />
+/// <reference path="Terrain.ts" />
 var WorldGen = (function () {
     function WorldGen(width, height, seed) {
         this.width = width;
@@ -39,6 +40,13 @@ var WorldGen = (function () {
                 } else {
                     this.terrainMap[i * this.width + j] = 2 /* GRASS */;
                 }
+            }
+        }
+
+        this.mapTiles = [];
+        for (var i = 0; i < this.tileHeight; i++) {
+            for (var j = 0; j < this.tileWidth; j++) {
+                this.mapTiles[i * this.tileWidth + j] = new MapTile(i, j);
             }
         }
     }

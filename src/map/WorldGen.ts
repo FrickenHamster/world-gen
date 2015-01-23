@@ -4,14 +4,18 @@
 
 /// <reference path="HamRand.ts" />
 /// <reference path="Terrain.ts" />
+/// <reference path="MapTile.ts" />
 
 class WorldGen
 {
 	width:number;
 	height:number;
+	tileWidth:number;
+	tileHeight:number;
 
 	heightMap:number[];
 	tempMap:number[];
+	mapTiles:MapTile[];
 	
 	terrainMap:Terrain[];
 
@@ -82,6 +86,15 @@ class WorldGen
 					this.terrainMap[i * this.width + j] = Terrain.GRASS;
 				}
 				
+			}
+		}
+
+		this.mapTiles = [];
+		for (var i:number = 0; i < this.tileHeight; i++)
+		{
+			for (var j:number = 0; j < this.tileWidth; j++)
+			{
+				this.mapTiles[i * this.tileWidth + j] = new MapTile(i, j);
 			}
 		}
 
